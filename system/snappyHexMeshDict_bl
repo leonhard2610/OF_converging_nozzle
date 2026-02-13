@@ -30,10 +30,10 @@ geometry
         regions
         {
             inlet { name inlet;}
-            outlet_topBottom {name outlet_topBottom;}
+            topBottom {name outlet_topBottom;}
             outlet_right { name outlet_right;}
             outlet_left { name outlet_left;}
-            nozzle { name nozzle;}
+            walls { name nozzle;}
             front { name front;}
             back { name back;}
         }
@@ -182,35 +182,35 @@ addLayersControls
     	    minThickness 0.00001;
     	}
 
-        inlet
-        {
-            //local control
-            nSurfaceLayers 1;        
-            expansionRatio 1.2;
-            finalLayerThickness 0.0002;
-            minThickness 0.00001;
-        }
+        // inlet
+        // {
+        //     //local control
+        //     nSurfaceLayers 1;        
+        //     expansionRatio 1.2;
+        //     finalLayerThickness 0.0002;
+        //     minThickness 0.00001;
+        // }
 
     }
         
-    nGrow 0;
+    nGrow 2;
 
     //featureAngle                130;		//recommended
     //featureAngle              330;		//improved
 
     featureAngle                170;
 
-    maxFaceThicknessRatio       0.5;
+    maxFaceThicknessRatio       0.3;
     
-    //slipFeatureAngle            20;     //Default is 0.5*featureAngle.
+    // slipFeatureAngle            70;     //Default is 0.5*featureAngle.
 
 // Patch displacement 
-    nSmoothSurfaceNormals       1;
+    nSmoothSurfaceNormals       5;
     nSmoothThickness            10;
     
 // Medial axis analysis
-    nSmoothNormals              3;
-    maxThicknessToMedialRatio   0.6;    //0.3D 0.6
+    nSmoothNormals              5;
+    maxThicknessToMedialRatio   0.3;    //0.3D 0.6
     minMedialAxisAngle          80;
     //nMedialAxisIter             10;
     //nSmoothDisplacement       0;
@@ -222,6 +222,7 @@ addLayersControls
     nRelaxedIter                20;
     nRelaxIter                  5;
     additionalReporting       false;
+
     
 }
 

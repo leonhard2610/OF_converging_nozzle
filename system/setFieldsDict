@@ -15,9 +15,9 @@ FoamFile
 
 defaultValues
 {
-    T       600;
-    p       150000;
-    U       (10 0 0);
+    T       300;
+    p       101325;
+    U       (1 0 0);
 }
 
 zones

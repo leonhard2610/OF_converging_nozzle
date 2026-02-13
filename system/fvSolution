@@ -85,30 +85,15 @@ solvers
 
 PIMPLE
 {
-    momentumPredictor           yes;	//yes(D)
     transonic 		            yes;
-    consistent		            yes;
+    nOuterCorrectors            50;
+    nCorrectors                 2;
 
-    nOuterCorrectors            2;
-    nCorrectors                 3;
-    nNonOrthogonalCorrectors    1;
-
-
-//Limits pressure - OF8
-//In OF9 and above is done in fvConstraints
-
-//Increase slowly for stability
-    //pMinFactor      0.2;
-    //pMaxFactor      2.5;		
-
-    //pMin 10000; 
-    //pMax 500000;
-
-//More stable than the other options
-//This is supported for backward-compatibility but'pMin' or 'pMinFactor' are more reliable.
-    //rhoMin 0.1; 
-    //rhoMax 5;
-
+    residualControl
+    {
+        U                       1e-5;
+        p                       5e-4;
+     }
 }
 
 relaxationFactors

@@ -14,9 +14,11 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+libs            ( "libshockFluid_debug.so" );
+
 application     foamRun;
 
-solver          shockFluid;
+solver          shockFluid_debug;
 
 startTime       startTime;
 
